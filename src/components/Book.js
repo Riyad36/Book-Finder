@@ -1,12 +1,38 @@
-// import React from "react";
+ import React from "react";
 // import { Link } from "react-router-dom";
 
-// const Book = (props) => {
+ const Book = (props) => {
 //  const ImageURL = "https://image.tmdb.org/t/p/w500/" + props.data.poster_path;
-//   return (
-//     <div class="col s12 m4">
-//       <div class="card">
-//         <div class="card-image">
+   return (
+     <div>
+       <div className="row">
+    <div className="col s12 m8">
+      <div className="card">
+        <div className="card-image">
+          <img src="images/sample-1.jpg"/>
+          <span className="card-title">card title</span>
+          <a className="btn-floating halfway-fab waves-effect waves-light red">
+        <i className="material-icons">add</i>
+        </a>
+        </div>
+        <div className="card-content">
+
+          <p>
+            Riyad-E-AL Muhafiz
+          </p>
+         
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  );
+};
+
+export default Book;
+
+
+
 //           {props.data.poster_path == null ? (
 //             <img
 //               src="https://picsum.photos/200/300"
@@ -21,22 +47,12 @@
 //             />
 //           )}
 
-//           <span class="card-title">{props.data.title}</span>
-//         </div>
-//         <div class="card-content">{props.data.release_date}</div>
-//         <div class="card-action">
-//           <Link
-//             to={{
-//               pathname: "/volumes/" + props.data.id,
-//               book_id: props.data.id,
-//             }}
-//           >
-//             See Details
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
-// export default Book;
+{/* <Link
+to={{
+  pathname: "/volumes/" + props.data.id,
+  book_id: props.data.id,
+}}
+>
+See Details
+</Link> */}

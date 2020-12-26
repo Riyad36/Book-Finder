@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Searchbar from "./components/Searchbar";
-//import BookList from "./components/BookList";
+import BookList from "./components/BookList";
 import { getBooksByTerm } from "./api/GBook";
 //import Pagination from "./components/Pagination";
 
@@ -28,6 +28,7 @@ const App = () => {
   return (
     <div>
       <Searchbar handleChange={handleChange} handleSubmit={handleSubmit} />
+      <BookList books={books} />
       {/* {totalPages > 1 ? (
         <Pagination
           //nextPage={nextPage}
