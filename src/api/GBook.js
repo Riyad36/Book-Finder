@@ -13,7 +13,7 @@ const getBooksByTerm = (SearchTerm, setBooks) => {
       key: "AIzaSyDZrUhwZpkOFphfQAFlf9bqX2PGBAxdc9s"
     },
   }).then((response) => {
-    setBooks(response.data);
+    setBooks(response.data.items);
     //setTotalPages(response.data.total_pages);
   });
 };

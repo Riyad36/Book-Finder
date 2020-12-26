@@ -7,7 +7,7 @@ const BookList = (props) => {
     <div className="container">
       <div className="row">
         <div className="col s12">
-          {props.books.items.map((book, i) => {
+          {props.books.map((book, i) => {
             return <Book data={book} key={i} />;
           })}
         </div>
