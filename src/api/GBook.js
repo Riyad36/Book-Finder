@@ -16,7 +16,12 @@ const getBooksByTerm = (SearchTerm, setBooks, page_number, setTotalPages) => {
   }).then((response) => {
     console.log(response.data)
     setBooks(response.data.items);
-    setTotalPages(parseInt((response.data.totalItems)/10));
+    if(response.data.totalItems%10==0){
+      setTotalPages(parseInt((response.data.totalItems)/10));
+    }
+    else{
+    setTotalPages(parseInt((response.data.totalItems)/10)+1);
+    }
     
 
   });
