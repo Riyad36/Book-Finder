@@ -6,15 +6,19 @@ const GBook = axios.create({
 
 
 
-const getBooksByTerm = (SearchTerm, setBooks) => {
+const getBooksByTerm = (SearchTerm, setBooks, page_number, setTotalPages) => {
   GBook.get("/volumes", {
     params: {
       q : SearchTerm,
-      key: "AIzaSyDZrUhwZpkOFphfQAFlf9bqX2PGBAxdc9s"
+      key: "AIzaSyDZrUhwZpkOFphfQAFlf9bqX2PGBAxdc9s",
+      page:page_number
     },
   }).then((response) => {
+    console.log(response.data)
     setBooks(response.data.items);
-    //setTotalPages(response.data.total_pages);
+    setTotalPages(parseInt((response.data.totalItems)/10));
+    
+
   });
 };
 
