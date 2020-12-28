@@ -5,7 +5,11 @@ const Navbar = () => {
   return (
     <div>
       <nav>
-        <div className="nav-wrapper" style={{ backgroundColor: "#3B140C" }}>
+        <div className="nav-wrapper" style={{
+          textAlign: "center",
+          backgroundColor: "green"
+
+        }}>
           <Link to="/" className="brand-logo">
             Find Books
           </Link>

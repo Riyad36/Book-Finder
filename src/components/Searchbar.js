@@ -9,7 +9,7 @@ const Searchbar = (props) => {
             <div className="input-field">
               <input
                 placeholder="Find your books"
-                type="text"
+                type="text" 
                 onChange={props.handleChange}
               />
             </div>
@@ -17,7 +17,22 @@ const Searchbar = (props) => {
         </section>
       </div>
     </div>
+
+
+
+
+
+
   );
 };
+
+
+
+
+
+
+
+
+
 
 export default Searchbar;

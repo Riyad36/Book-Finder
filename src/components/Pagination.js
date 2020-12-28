@@ -26,7 +26,7 @@ const Pagination = (props) => {
   }
   return (
     <div className="container">
-      <div className="row">{page_links}</div>
+      <div className="row"  style={ {backgroundColor: "#B6B3B3" }}>{page_links}</div>
     </div>
   );
 };
