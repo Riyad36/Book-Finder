@@ -4,13 +4,18 @@ import { Link } from "react-router-dom";
 const Book = (props) => {
 
 
-  let imageUrl = props.data.volumeInfo.imageLinks.thumbnail
-
-
+  let ImageURL;
+  
+    if (props.data.volumeInfo.imageLinks.thumbnail == undefined) {
+        ImageURL = null;
+    } else {
+        ImageURL = props.data.volumeInfo.imageLinks.thumbnail;
+    }
+  
   return (
     <Link to={{
       pathname: "/volumes/" + props.data.id,
-      book_id: props.data.id
+      volumeId: props.data.id
     }}>
 
 
@@ -26,7 +31,7 @@ const Book = (props) => {
               />
             ) : (
                 <img
-                  src={imageUrl}
+                  src={ImageURL}
                   alt=""
                   style={{ width: "100", height: "200" }}
                 />
@@ -35,7 +40,7 @@ const Book = (props) => {
           </div>
           <div className="card-content">
 
-            {props.data.volumeInfo.authors}
+           <p><b> {props.data.volumeInfo.authors}</b></p>
 
           </div>
 

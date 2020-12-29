@@ -5,11 +5,23 @@ import { Link } from "react-router-dom";
 const BookDetails = (props) => {
   const [currentBook, setCurrentBook] = useState({});
 
+  
+
   useEffect(() => {
-    getBookDetails(props.match.params.volumeId, setCurrentBook);
+    getBookDetails(props.location.volumeId, setCurrentBook);
   }, []);
 
-   //const imageURL = currentBook.volumeInfo.imageLinks.thumbnail
+  
+   let ImageURL;
+
+   if (currentBook.volumeInfo == undefined){
+    return (<div>Loading... Please wait</div>)
+}else {
+    if (currentBook.volumeInfo.imageLinks == undefined) {
+      ImageURL = null;
+    } else {
+        ImageURL = currentBook.volumeInfo.imageLinks.thumbnail;
+    }
 
   return (
     <div>
@@ -19,7 +31,7 @@ const BookDetails = (props) => {
             <div className="card-image">
               {props.match!= null ? (
                 <img
-                  src="https://picsum.photos/300/600"
+                  src={ImageURL}
                   alt=""
                   style={{ width: "300", height: "600" }}
                 />
@@ -34,11 +46,17 @@ const BookDetails = (props) => {
             <div className="card-content">
               
               <p><b>Book Title : {currentBook.volumeInfo.title}</b></p>
+              <p></p>
               <p><b>Authors : {currentBook.volumeInfo.authors}</b></p>
+              <p></p>
               <p><b>Total Page : {currentBook.volumeInfo.printedPageCount}</b></p>
+              <p></p>
               <p><b>Published at : {currentBook.volumeInfo.publishedDate}</b></p>
+              <p></p>
               <p><b>Rating : {currentBook.volumeInfo.averageRating}</b></p>
+              <p></p>
               <p><b>Total Rater: {currentBook.volumeInfo.ratingsCount}</b></p>
+              <p></p>
               <p><b>Dsecription of the book...</b></p>
               <p><b>{currentBook.volumeInfo.description}</b></p>
               
@@ -51,6 +69,6 @@ const BookDetails = (props) => {
       </div>
     </div>
   );
-};
+};}
 
 export default BookDetails;

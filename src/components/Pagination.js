@@ -2,6 +2,8 @@
 
 const Pagination = (props) => {
   
+  console.log(props);
+  
   const page_links = [];
   for (let i = 1; i <= props.totalPages; i++) {
     let isActive;
